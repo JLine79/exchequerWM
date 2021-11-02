@@ -1,6 +1,6 @@
 /* Banner slides */
 
-/*let slideIndex = 0;
+let slideIndex = 0;
 showSlides();
 
 function showSlides() {
@@ -12,17 +12,17 @@ function showSlides() {
   if (slideIndex > slides.length) {slideIndex = 1}    
   slides[slideIndex-1].style.display = "block"
   setTimeout(showSlides, 2000); // Change image every 2 seconds
-}*/
+}
 
 /* FAQ Accordion */
 
-/*const accordion = document.getElementsByClassName("accordion-container");
+const accordion = document.getElementsByClassName("accordion-container");
 
 for (i=0; i<accordion.length; i++) {
   accordion[i].addEventListener('click', function () {
     this.classList.toggle('active')
   })
-}*/
+}
 
 /* Contact Form */
 

@@ -85,28 +85,207 @@ textarea {
 
 /* ==========================================================================
    Author's custom styles
-   ========================================================================== */
-   * {
-    box-sizing: border-box;
+========================================================================== */
+ * {
     margin: 0;
     padding: 0;
-   }
+    box-sizing: border-box;
+  }
+    
+  img {
+    width: 90%;
+  }
 
-   img {
-     width: 90%;
-   }
+  html {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 2em;
+  }
 
   
 /* ==========================================================================
    Header Area
-   ========================================================================== */
+========================================================================== */
 
-   .banner {
-    max-width: auto;
-    max-height: 200px;
+/* Sliding Banner */
+
+  .banner-wrapper {
+    max-width: 100%;
     position: relative;
     margin: auto;
-   }
+  }
+  
+  .banner {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    margin: auto;
+  }
+  
+  .banner-box {
+    max-height: 300px;
+  }
+  
+  .banner-box img {
+    vertical-align: top;
+    max-height: 250px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Sliding animation */
+  .slide {
+    -webkit-animation: slide 1s forwards;
+    -webkit-animation-delay: 3s;
+    animation: slide 1s forwards;
+    animation-delay: 3s;
+  }
+  
+  @-webkit-keyframes slide {
+    100% { left: 0; }
+  }
+  
+  @keyframes slide {
+    100% { left: 0; }
+  }
+
+/* Navigation */
+
+.navigation {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 2em;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0.75em;
+  padding: 0.75em;
+  background-color: #4361ee;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background-color: #fe4a49;
+}
+
+/*============================================================================
+Landing Area
+============================================================================ */
+
+/* Quick links & graphic if there's time */
+
+/*Products & Services */
+
+.product-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.topic-wrapper {
+  width: 30%;
+}
+
+.card-wrapper {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-wrapper:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.card-front img {
+  width: 100%;
+}
+
+.card-back {
+  background-color: #bfc0c0;
+  color: #222222;
+  transform: rotateY(180deg);
+}
+
+.faq .accordion-container {
+  position: relative;
+  margin: 10px;
+}
+
+.faq .topic {
+  position: relative;
+  padding: 10px 0;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+.faq .topic::before {
+  content: '+';
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+.faq .faq-content {
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  width: 780px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.faq .accordion-container.active .faq-content {
+  height: auto;
+}
+
+.faq .accordion-container.active .topic::before {
+  content: '-';
+  font-size: 30px;
+}
+
+
+
+  
 
   
   
