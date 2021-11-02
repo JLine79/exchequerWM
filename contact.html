@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="css/contact.css">
+  </head>
+
+  <body>
+      <div class="contact-form">
+          <h2>Contact Us</h2>
+            <form onSubmit="return false">
+                <input type="text" placeholder="First Name" id="firstName" />
+                <input type="text" placeholder="Surname" id=lastName />
+                <input type="email" placeholder="Email Address" id=email />
+                <input type="text" placeholder="Telephone Number" id=telNo />
+                <input type="checkbox" name="investments" id="investments" />
+                <label for="investments">Investments</label>
+                <input type="checkbox" name="retirement" id="retirement" />
+                <label for="retirement">Retirement Planning</label>
+                <input type="checkbox" name="family" id="family" />
+                <label for="family">Family Protection</label>
+                <input type="checkbox" name="estate" id="estate"/>
+                <label for="estate">Estate Planning</label>
+                <input type="checkbox" name="advice" id="advice" />
+                <label for="advice">Expert Advice</label>
+                <input type="checkbox" name="other" id="other" />
+                <label for="other">Other&sol;Not Sure</label>
+                <span>Additional Information</span>
+                <textarea id="addInfo" rows="6"></textarea>
+                <button onclick="sendContact();">Submit</button>
+            </form>
+      </div>
+
+  <script src="js/main.js"></script>
+  </body>
+</html>
