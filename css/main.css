@@ -110,9 +110,8 @@ textarea {
   }
 
   hr {
-    border-top: 5px solid #bfc0c0;
+    border-top: 5px solid #fe4a49;
   }
-
   
 /* ==========================================================================
    Header Area
@@ -129,20 +128,23 @@ textarea {
   .banner {
     position: relative;
     max-width: 100%;
-    height: 300px;
+    height: 100px;
     margin: auto;
   }
   
   .banner-box {
-    max-height: 300px;
-  }
-  
-  .banner-box img {
-    vertical-align: top;
-    max-height: 250px;
+    background-color: #4361ee;
+    border-top: solid 10px #fe4a49;
+    border-bottom: solid 10px #fe4a49;
+    color: #f8f9fa;
     width: 100%;
-    overflow: hidden;
   }
+
+  .banner-box h1 {
+    text-align: center;
+  }
+
+  
   
   /* Sliding animation */
   .slide {
@@ -283,98 +285,67 @@ Landing Area
 }
 
 .product-links ul li a:hover {
-  color: #fe4a49;
+  color: #4361ee;
 }
 
-/* Products and FAQs */
+/* ==========================================================================
+Products and FAQs
+============================================================================ */
 
 .topic-wrapper {
   display: grid;
   grid-gap: 1.5rem;
-  padding: 3rem;
+  padding: 1rem 3rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .card-wrapper {
   perspective: 40rem;
-
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
 }
 
 .card-inner {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 50%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  transition: var(--time) transform;
 }
 
-.card-wrapper:hover {
-  transform: rotateY(-180deg);
+.card-wrapper:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  height: 400px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
 }
 
 .card-front img {
   width: 100%;
 }
 
-
-.card-front, .card-back {
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  min-width: 100%;
-}
-
 .card-back {
-  transform: rotateX(-180deg);
   background-color: #bfc0c0;
   color: #222222;
+  font-size: 16px;
+  line-height: 2em;
+  padding: 50px;
   transform: rotateY(180deg);
-  transform: translate(-100%, 0);
 }
 
+.card-back h2 {
+  margin-bottom: 1em;
+}
 
-/*.card-wrapper {
-  display: grid;
-  /*background-color: transparent;
-  width: 300px;
-  height: 200px;
-  margin: 0;
-}*/
-
-/*.card-inner {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  transition: var(--time) transform;
-}*/
-
-/*.card-wrapper:hover { 
-  transform: rotateY(180deg);
-}*/
-
-/*.card-front, .card-back {
-  position: absolute;
-  min-width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari 
-  backface-visibility: hidden;
-}*/
-
-/*.card-front img {
-  width: 100%;
-}*/
-
-/*.card-back {
-  background-color: #bfc0c0;
-  color: #222222;
-  transform: rotateY(180deg);
-  transform: translate(-100%, 0);
-}*/
+.faq-container {
+  padding-top: 3rem;
+}
 
 .faq .accordion-container {
   position: relative;
@@ -384,7 +355,7 @@ Landing Area
 .faq .topic {
   position: relative;
   padding: 10px 0;
-  font-size: 30px;
+  font-size: 16px;
   color: black;
   cursor: pointer;
 }
@@ -401,22 +372,170 @@ Landing Area
 
 .faq .faq-content {
   position: relative;
-  background: white;
+  background: #f8f9fa;
   height: 0;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 2em;
   text-align: justify;
-  width: 780px;
+  width: 85%;
   overflow: hidden;
   transition: 0.5s;
 }
 
+.faq h2 {
+  margin-bottom: 1.5em;
+}
+
 .faq .accordion-container.active .faq-content {
-  height: auto;
+  height: fit-content;
 }
 
 .faq .accordion-container.active .topic::before {
   content: '-';
   font-size: 30px;
+}
+
+#expertadvice {
+  font-size: 16px;
+  line-height: 2em;
+  padding: 50px;
+}
+
+#expertadvice .advice-info {
+  padding-top: 100px;
+}
+
+.advice-info a:hover {
+  background-color: #4361ee;
+  color: #f8f9fa;
+  padding: 0.25em;
+}
+
+/* ==========================================================================
+About section
+=========================================================================== */
+
+#about {
+  display: grid;
+  grid-gap: 1.5rem;
+  padding: 1rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  margin-bottom: 3rem;
+}
+
+#about h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+div.about {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.about div {
+  align-self: center;
+  line-height: 2.5rem;
+}
+
+/* ==========================================================================
+Contact Form
+=========================================================================== */
+#contact {
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form div {
+  margin: 0.5em 1em 1em 0;
+}
+
+.contact-form .contact-entry input {
+  margin: 1em;
+  padding: 0.25em;
+  width: 400px;
+}
+
+.contact-selection h4,
+.extra-info h4 {
+  line-height: 1.5em;
+  padding: 1em;
+}
+
+.contact-selection input,
+.contact-selection ul li {
+  margin: 0.75em;
+  list-style-type: none;
+}
+
+.extra-info textarea {
+  width: 100%;
+}
+
+.submit {
+  background-color: #4361ee;
+  color: #f8f9fa;
+  padding: 0.25em;
+  cursor:pointer;
+}
+
+/* ================================================================================
+Insights Carousel Section 
+================================================================================= */
+.insights {
+  margin-top: 2rem;
+}
+
+.hide {
+  display: none
+}
+
+.active {
+  display: block
+}
+
+#articles-inner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+  overflow: hidden;
+}
+
+.article img {
+  height: 300px;
+  max-width: 400px;
+}
+
+.article {
+  line-height: 2em;
+  width: 25%;
+}
+
+article h2,
+article p {
+  padding-top: 0.5em;
+}
+
+/* ===========================================================================
+Footer 
+=========================================================================== */
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  line-height: 2em;
+  margin: 2rem;
+}
+
+footer img {
+  width: 200px;
 }
 
 

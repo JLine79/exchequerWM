@@ -1,9 +1,3 @@
-/*.topic-wrapper {
-  display: flex;
-  flex-flow: column wrap;
-  width: 45%;
-}*/
-
 .topic-wrapper {
   display: grid;
   grid-gap: 1.5rem;
@@ -11,36 +5,19 @@
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
-/*.card-wrapper {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  perspective: 1000px;
-}*/
-
 .card-wrapper {
   perspective: 40rem;
   width: 500px;
-  height: auto;
+  height: 500px;
 }
-
-/*.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}*/
 
 .card-inner {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 50%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  /*transition: var(--time) transform;*/
 }
 
 .card-wrapper:hover .card-inner {
@@ -49,67 +26,60 @@
 
 .card-front, .card-back {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  height: 300px;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 
-/*.card-front, .card-back {
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  min-width: 100%;
-}*/
-
 .card-front img {
-    width: 100%;
+  width: 100%;
 }
 
 .card-back {
-    background-color: #bfc0c0;
-    color: #222222;
-    transform: rotateY(180deg);
+  background-color: #bfc0c0;
+  color: #222222;
+  transform: rotateY(180deg);
 }
 
 .faq .accordion-container {
-    position: relative;
-    margin: 10px;
+  position: relative;
+  margin: 10px;
 }
 
 .faq .topic {
-    position: relative;
-    padding: 10px 0;
-    font-size: 30px;
-    color: black;
-    cursor: pointer;
+  position: relative;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
 }
 
 .faq .topic::before {
-    content: '+';
-    color: black;
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    font-size: 30px;
-    transform: translateY(-50%);
+  content: '+';
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
 }
 
 .faq .faq-content {
-    position: relative;
-    background: white;
-    height: 0;
-    font-size: 20px;
-    text-align: justify;
-    width: 780px;
-    overflow: hidden;
-    transition: 0.5s;
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 16px;
+  text-align: justify;
+  width: 65%;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 .faq .accordion-container.active .faq-content {
-    height: 150px;
+  height: fit-content;
 }
 
 .faq .accordion-container.active .topic::before {
-    content: '-';
-    font-size: 30px;
-  }
+  content: '-';
+  font-size: 30px;
+}
