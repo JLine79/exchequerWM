@@ -539,12 +539,6 @@ footer img {
 }
 
 
-
-  
-
-  
-  
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -634,6 +628,430 @@ footer img {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+  /* ==========================================================================
+   Header Area
+========================================================================== */
+
+  /* Sliding Banner */
+
+  .banner-wrapper {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
+
+  .banner {
+    position: relative;
+    max-width: 100%;
+    height: 100px;
+    margin: auto;
+  }
+
+  .banner-box {
+    background-color: #4361ee;
+    border-top: solid 10px #fe4a49;
+    border-bottom: solid 10px #fe4a49;
+    color: #f8f9fa;
+    width: 100%;
+  }
+
+  .banner-box h1 {
+    text-align: center;
+  }
+
+
+
+  /* Sliding animation */
+  .slide {
+    -webkit-animation: slide 1s forwards;
+    -webkit-animation-delay: 3s;
+    animation: slide 1s forwards;
+    animation-delay: 3s;
+  }
+
+  @-webkit-keyframes slide {
+    100% { left: 0; }
+  }
+
+  @keyframes slide {
+    100% { left: 0; }
+  }
+
+  /* Navigation */
+
+  nav {
+  display: flex;
+  align-items: center;
+  }
+
+  .navigation {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 2em;
+  width: 100%;
+  }
+
+  .logo {
+  width: 150px;
+  }
+
+  nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0.75em;
+  padding: 0.75em;
+  background-color: #4361ee;
+  }
+
+  nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  }
+
+  nav ul li:hover {
+  background-color: #fe4a49;
+  }
+
+  /*============================================================================
+  Landing Area
+  ============================================================================ */
+
+  /* Quick links & graphic if there's time */
+
+  /*Hero image and product list*/
+
+  .landing {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  padding: 2em 0;
+  }
+
+  .hero {
+  position: relative;
+  width: 45%;
+  }
+
+  .hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  }
+
+  .hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #bfc0c0;
+  }
+
+  .hero:hover .hover {
+  opacity: 1;
+  cursor: pointer;
+  }
+
+  .hover-text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  }
+
+  .highlight {
+  color: #4b75f2;
+  }
+
+  .product-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  }
+
+  .product-links ul li {
+  list-style-type: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1em;
+  }
+
+  .product-links ul li:hover {
+  background-color: #bfc0c0;
+  }
+
+  .product-links ul li a {
+  color: #222222;
+  text-decoration: none;
+  }
+
+  .product-links ul li a:hover {
+  color: #4361ee;
+  }
+
+  /* ==========================================================================
+  Products and FAQs
+  ============================================================================ */
+
+  .topic-wrapper {
+  display: grid;
+  grid-gap: 1.5rem;
+  padding: 1rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  .card-wrapper {
+  perspective: 40rem;
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
+  }
+
+  .card-inner {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  }
+
+  .card-wrapper:hover .card-inner {
+  transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+  position: absolute;
+  height: 400px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  }
+
+  .card-front img {
+  width: 100%;
+  }
+
+  .card-back {
+  background-color: #bfc0c0;
+  color: #222222;
+  font-size: 16px;
+  line-height: 2em;
+  padding: 50px;
+  transform: rotateY(180deg);
+  }
+
+  .card-back h2 {
+  margin-bottom: 1em;
+  }
+
+  .faq-container {
+  padding-top: 3rem;
+  }
+
+  .faq .accordion-container {
+  position: relative;
+  margin: 10px;
+  }
+
+  .faq .topic {
+  position: relative;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  }
+
+  .faq .topic::before {
+  content: '+';
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+  }
+
+  .faq .faq-content {
+  position: relative;
+  background: #f8f9fa;
+  height: 0;
+  font-size: 16px;
+  line-height: 2em;
+  text-align: justify;
+  width: 85%;
+  overflow: hidden;
+  transition: 0.5s;
+  }
+
+  .faq h2 {
+  margin-bottom: 1.5em;
+  }
+
+  .faq .accordion-container.active .faq-content {
+  height: fit-content;
+  }
+
+  .faq .accordion-container.active .topic::before {
+  content: '-';
+  font-size: 30px;
+  }
+
+  #expertadvice {
+  font-size: 16px;
+  line-height: 2em;
+  padding: 50px;
+  }
+
+  #expertadvice .advice-info {
+  padding-top: 100px;
+  }
+
+  .advice-info a:hover {
+  background-color: #4361ee;
+  color: #f8f9fa;
+  padding: 0.25em;
+  }
+
+  /* ==========================================================================
+  About section
+  =========================================================================== */
+
+  #about {
+  display: grid;
+  grid-gap: 1.5rem;
+  padding: 1rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  margin-bottom: 3rem;
+  }
+
+  #about h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1.5em;
+  }
+
+  div.about {
+  display: flex;
+  flex-flow: row nowrap;
+  }
+
+  .about div {
+  align-self: center;
+  line-height: 2.5rem;
+  }
+
+  /* ==========================================================================
+  Contact Form
+  =========================================================================== */
+  #contact {
+  text-align: center;
+  }
+
+  .contact-form {
+  display: flex;
+  justify-content: center;
+  }
+
+  .contact-form div {
+  margin: 0.5em 1em 1em 0;
+  }
+
+  .contact-form .contact-entry input {
+  margin: 1em;
+  padding: 0.25em;
+  width: 400px;
+  }
+
+  .contact-selection h4,
+  .extra-info h4 {
+  line-height: 1.5em;
+  padding: 1em;
+  }
+
+  .contact-selection input,
+  .contact-selection ul li {
+  margin: 0.75em;
+  list-style-type: none;
+  }
+
+  .extra-info textarea {
+  width: 100%;
+  }
+
+  .submit {
+  background-color: #4361ee;
+  color: #f8f9fa;
+  padding: 0.25em;
+  cursor:pointer;
+  }
+
+  /* ================================================================================
+  Insights Carousel Section 
+  ================================================================================= */
+  .insights {
+  margin-top: 2rem;
+  }
+
+  .hide {
+  display: none
+  }
+
+  .active {
+  display: block
+  }
+
+  #articles-inner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+  overflow: hidden;
+  }
+
+  .article img {
+  height: 300px;
+  max-width: 400px;
+  }
+
+  .article {
+  line-height: 2em;
+  width: 25%;
+  }
+
+  article h2,
+  article p {
+  padding-top: 0.5em;
+  }
+
+  /* ===========================================================================
+  Footer 
+  =========================================================================== */
+  footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  line-height: 2em;
+  margin: 2rem;
+  }
+
+  footer img {
+  width: 200px;
+  }
   /* Style adjustments for viewports that meet the condition */
 }
 
